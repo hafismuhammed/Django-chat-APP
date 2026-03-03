@@ -48,6 +48,7 @@ A  real-time one-to-one chat application built with Django, Django Channels, Web
 - Django Channels
 - Redis (Channel Layer Backend)
 - SQLite
+- html (for Django template)
 - Bootstrap 5
 - JavaScript (WebSocket)
 
@@ -67,8 +68,15 @@ chat_app/
 │   ├── urls.py            # App URLs
 |   ├── utils.py           # Helper function file
 |   ├── templates/
-│       ├── user_list.html
 |       ├── chat.html
+│       
+├── users/                     
+│   ├── views.py           
+│   ├── models.py
+|   ├── forms.py             
+│   ├── urls.py                    
+|   ├── templates/
+│       ├── user_list.html
 │       ├── login.html
 │       ├── register.html             
 │
@@ -89,7 +97,7 @@ chat_app/
 1) Clone Repository
 
 ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/hafismuhammed/Django-chat-APP.git
    cd chat_app
 ```
 
