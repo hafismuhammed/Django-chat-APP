@@ -42,7 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'channels',
+    'users',
+    'chat',
 ]
+
+LOGIN_URL          = "/login/"
+LOGIN_REDIRECT_URL = "/users/"
+LOGOUT_REDIRECT_URL = "/login/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +65,7 @@ ROOT_URLCONF = 'chat_app.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,9 +77,10 @@ TEMPLATES = [
     },
 ]
 
+ASGI_APPLICATION = 'chat_app.asgi.application'
+
 WSGI_APPLICATION = 'chat_app.wsgi.application'
 
-ASGI_APPLICATION = 'chat_app.asgi.application'
 
 CHANNEL_LAYERS = {
     'default': {
@@ -94,6 +101,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+AUTH_USER_MODEL = "users.User"
 
 
 # Password validation
