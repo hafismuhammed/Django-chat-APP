@@ -158,7 +158,8 @@ http://127.0.0.1:8000/
 Create a .env file and configure:
 
 ```bash
-Create a .env file and configure:
+SECRET_KEY=
+DEBUG=
 ```
 
 
